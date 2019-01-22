@@ -4,7 +4,6 @@ import guru.springframework.spring5webfluxrest.domain.Category;
 import guru.springframework.spring5webfluxrest.domain.Vendor;
 import guru.springframework.spring5webfluxrest.repositories.CategoryRepository;
 import guru.springframework.spring5webfluxrest.repositories.VendorRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +13,6 @@ public class Bootstrap implements CommandLineRunner {
     private final CategoryRepository categoryRepository;
     private final VendorRepository vendorRepository;
 
-    @Autowired
     public Bootstrap(CategoryRepository categoryRepository, VendorRepository vendorRepository) {
         this.categoryRepository = categoryRepository;
         this.vendorRepository = vendorRepository;
