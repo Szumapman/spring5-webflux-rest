@@ -29,8 +29,8 @@ public class CategoryControllerTest {
     @Test
     public void list() {
         BDDMockito.given(categoryRepository.findAll())
-                .willReturn(Flux.just(Category.builder().description("Cat1").build(),
-                        Category.builder().description("Cat2").build()));
+                .willReturn(Flux.just(new Category("Cat1", "Cat1"), //Category.builder().description("Cat1").build(),
+                        new Category("Cat2", "Cat2")));//Category.builder().description("Cat2").build()));
 
         webTestClient.get().uri("/api/v1/categories")
                 .exchange()
@@ -41,7 +41,7 @@ public class CategoryControllerTest {
     @Test
     public void getById() {
         BDDMockito.given(categoryRepository.findById("someid"))
-                .willReturn(Mono.just(Category.builder().description("Cat").build()));
+                .willReturn(Mono.just(new Category("Cat1", "Cat1")));//Category.builder().description("Cat").build()));
 
         webTestClient.get().uri("/api/v1/categories/someid")
                 .exchange()
