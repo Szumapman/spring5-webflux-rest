@@ -1,5 +1,6 @@
 package guru.springframework.spring5webfluxrest.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 @Builder
 @NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 public class Vendor {
 
     @Id
@@ -19,9 +20,4 @@ public class Vendor {
     private String firstName;
     private String lastName;
 
-    public Vendor(String id, String firstName, String lastName) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
 }

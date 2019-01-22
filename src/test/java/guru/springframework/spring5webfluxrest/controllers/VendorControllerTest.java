@@ -26,8 +26,8 @@ public class VendorControllerTest {
     @Test
     public void list() {
         BDDMockito.given(vendorRepository.findAll())
-                .willReturn(Flux.just(new Vendor("Joe", "Black", "JB"),//Vendor.builder().firstName("Joe").lastName("Black").build(),
-                        new Vendor("John", "Smith", "JS")));//Vendor.builder().firstName("John").lastName("Smith").build()));
+                .willReturn(Flux.just(Vendor.builder().firstName("Joe").lastName("Black").build(),
+                        Vendor.builder().firstName("John").lastName("Smith").build()));
 
         webTestClient.get().uri("/api/v1/vendors")
                 .exchange()
@@ -38,7 +38,7 @@ public class VendorControllerTest {
     @Test
     public void getById() {
         BDDMockito.given(vendorRepository.findById("someid"))
-                .willReturn(Mono.just(new Vendor("John", "Smith", "JS")));//Vendor.builder().firstName("John").lastName("Smith").build()));
+                .willReturn(Mono.just(Vendor.builder().firstName("John").lastName("Smith").build()));
 
         webTestClient.get().uri("/api/v1/vendors/someid")
                 .exchange()
