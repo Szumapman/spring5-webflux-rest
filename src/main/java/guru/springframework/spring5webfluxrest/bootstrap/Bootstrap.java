@@ -1,9 +1,8 @@
 package guru.springframework.spring5webfluxrest.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Bootstrap implements CommandLineRunner {
 
 //    private final CategoryRepository categoryRepository;
